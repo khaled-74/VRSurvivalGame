@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject Bullet,ShootingOffset;
+    public float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class Shoot : MonoBehaviour
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,grabbable.grabbedBy.m_controller)&&grabbable.isGrabbed)
             {
                 GameObject currentBullet = Instantiate(Bullet, ShootingOffset.transform.position, ShootingOffset.transform.rotation);
-                currentBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
+                currentBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
             }
         }
     }
