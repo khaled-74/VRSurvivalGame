@@ -1680,6 +1680,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 305369691}
+    - target: {fileID: 1624582070437391807, guid: b77695aae693dbe4c804dbd6e9be52ca, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1894543304358484157, guid: b77695aae693dbe4c804dbd6e9be52ca, type: 3}
       propertyPath: m_Name
       value: MummyVR3
