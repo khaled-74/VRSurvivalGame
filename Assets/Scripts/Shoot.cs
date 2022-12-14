@@ -6,6 +6,8 @@ public class Shoot : MonoBehaviour
 {
     public GameObject Bullet,ShootingOffset;
     public float bulletSpeed;
+    [SerializeField] ParticleSystem muzzleFlash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Shoot : MonoBehaviour
         {
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,grabbable.grabbedBy.m_controller)&&grabbable.isGrabbed)
             {
+                muzzleFlash.Play();
                 GameObject currentBullet = Instantiate(Bullet, ShootingOffset.transform.position, ShootingOffset.transform.rotation);
                 currentBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
             }
